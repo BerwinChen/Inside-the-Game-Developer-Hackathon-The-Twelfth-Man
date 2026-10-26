@@ -3,6 +3,7 @@
 Football match replay, goal and shot forecasts, and conversations with four independent AI agents.
 
 Website: [twelfth-man.azurewebsites.net](https://twelfth-man.azurewebsites.net/)
+Demo videl: [https://www.youtube.com/watch?v=kSWUhtoHti0](https://www.youtube.com/watch?v=kSWUhtoHti0)
 
 The existing statistical model is a separate contribution; its original Git history, documentation and files are preserved under `stat_model/`.
 
