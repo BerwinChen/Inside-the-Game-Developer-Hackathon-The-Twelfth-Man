@@ -45,7 +45,8 @@ async def invoke(request):
             return JSONResponse({"error": "The AI team could not complete this request."}, status_code=502)
 
     async def stream():
-        queue = asyncio.Queue(maxsize=128)
+        # Output is bounded by model token limits; allow bursts of text deltas.
+        queue = asyncio.Queue()
         async def produce():
             try:
                 await run_team(body, None, queue.put_nowait, remote_executor=remote())

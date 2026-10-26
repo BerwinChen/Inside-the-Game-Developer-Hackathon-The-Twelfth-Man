@@ -97,7 +97,7 @@ export function mountChat({getContext,getSummary,onSeek}) {
             else{renderAnswer(reply.content,event.parts??[]);transcript.push(`${info.name} (${event.phase}): ${(event.parts??[]).map(p=>p.text).join('\n')}`);}
           }
         }
-        if(event.type==='reset'){streamed='';answer.content.textContent='Checking the available evidence…';}
+        if(event.type==='reset'){streamed='';answer.content.textContent='Thinking';}
         if(event.type==='status'&&!streamed)answer.content.textContent=event.text;
         if(event.type==='delta'){streamed+=event.text;renderAnswer(answer.content,[{text:streamed}]);}
         if(event.type==='source'&&!Array.from(trace.children).some(c=>c.textContent===event.label))trace.append(make('span','',event.label));

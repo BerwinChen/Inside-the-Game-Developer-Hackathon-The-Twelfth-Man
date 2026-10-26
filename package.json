@@ -18,7 +18,6 @@
     "typescript": "^7.0.2",
     "wrangler": "^4.152.0"
   },
-  "author": "berwin",
   "engines": {
     "node": ">=22"
   }

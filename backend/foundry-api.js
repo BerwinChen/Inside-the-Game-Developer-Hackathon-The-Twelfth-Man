@@ -27,7 +27,7 @@ export async function checkFoundry(env,fetcher=fetch,signal){
 }
 
 export async function runFoundryChat(body,env,emit,fetcher=fetch,signal){
-  emit({type:'status',text:'Connecting to Foundry agents…'});
+  emit({type:'status',text:'Thinking'});
   const response=await foundryRequest(env,{...body,stream:true},fetcher,signal);
   let done=false;
   for await(const event of readSSE(response.body)){

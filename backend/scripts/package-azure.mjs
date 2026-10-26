@@ -16,5 +16,5 @@ await publicFiles('frontend/dist');
 for(const name of ['goal_model.json','shot_model.json','role_skills.json','config.json'])await copy('stat_model/src/football_value/models/'+name);
 // Shared modules imported by the API are also included at their source paths.
 for(const name of ['analytics.js','model.js','player-enrichment.js','player-roles.js','team-identity.js','forecast-kernel.js','forecast-adapter.js','chat-agents.js'])await copy('frontend/'+name);
-await writeFile(path.join(target,'package.json'),JSON.stringify({name:'twelfth-man',private:true,type:'module',author:'berwin',engines:{node:'22.x'},scripts:{start:'node backend/server.js'}},null,2)+'\n');
+await writeFile(path.join(target,'package.json'),JSON.stringify({name:'twelfth-man',private:true,type:'module',engines:{node:'22.x'},scripts:{start:'node backend/server.js'}},null,2)+'\n');
 console.log('Prepared Azure runtime package without credentials, local state or development dependencies.');

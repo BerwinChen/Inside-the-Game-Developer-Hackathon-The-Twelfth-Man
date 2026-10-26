@@ -4,7 +4,7 @@ Football match replay, goal and shot forecasts, and conversations with four inde
 
 Website: [twelfth-man.azurewebsites.net](https://twelfth-man.azurewebsites.net/)
 
-Application author: **berwin**. The existing statistical model is a separate contribution; its original Git history, documentation and files are preserved under `stat_model/`.
+The existing statistical model is a separate contribution; its original Git history, documentation and files are preserved under `stat_model/`.
 
 ## Project layout
 

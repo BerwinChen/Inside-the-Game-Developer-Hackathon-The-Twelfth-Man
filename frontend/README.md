@@ -1,7 +1,5 @@
 # Frontend
 
-Author: berwin
-
 English-language 2D match replay, player profiles, compact 1s/3s/30s forecasts, floating match view and independent agent conversations.
 
 Run `npm run build` from the repository root. `build.mjs` copies an explicit allow-list of public assets to `frontend/dist/`; backend files, credentials and model artifact files are excluded. `replays/` contains the compact two-half match sample. `samples/` contains synthetic development fixtures. Serve through the backend during local development with `npm run dev`.

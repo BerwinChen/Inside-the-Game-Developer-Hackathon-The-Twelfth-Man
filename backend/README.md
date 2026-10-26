@@ -1,7 +1,5 @@
 # Backend
 
-Application author: berwin
-
 ## Components
 
 - `worker.js`: HTTP API gateway, authorization, request validation, rate limiting and streaming chat responses.

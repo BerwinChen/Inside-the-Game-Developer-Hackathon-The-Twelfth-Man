@@ -1,7 +1,5 @@
 # Independent Foundry agents
 
-Application author: berwin
-
 | Role | Saved prompt-agent resource |
 | --- | --- |
 | Twelfth Man Host | `twelfth-man-host` |
@@ -37,3 +35,9 @@ Project endpoint: `https://ai4soccer.services.ai.azure.com/api/projects/inside-t
 The gateway sends `message`, `agent` (`auto`, `coach`, `referee`, `data`), `mode` (`direct` or `discussion`), room `history` and captured replay `snapshot`. Times are seconds and future events are rejected. `stream: false` returns JSON; SSE emits role progress, reports, answer deltas and completion. A `healthCheck` request verifies readiness without model inference.
 
 The hosted service uses managed identity for model inference. The current Cloudflare gateway authenticates with its project-scoped server identity. Browser clients receive neither credential. Web search is disabled in this hosted version; current external facts are not claimed as verified. Numerical forecast queries are not yet exposed as agent tools.
+
+## Response latency
+
+The server reads the captured match summary once per request and supplies that tool result to the selected agents, avoiding a redundant model/function round trip for basic clock and score questions. Other player and event queries still use request-scoped functions. Direct answers and Host summaries forward text deltas as the model generates them. Interrupted streams are reported as failures and provisional text is reset when a tool round requires a grounded follow-up.
+
+Discussion retains three parallel openings, three parallel peer responses and a Host synthesis. Each agent speaks only for its own role; short phase instructions reduce repetitive reports. Model reasoning remains minimal and no cheaper model is substituted. Full discussion takes longer than a private conversation because it still has three dependent phases. Cold starts and upstream load can affect latency.

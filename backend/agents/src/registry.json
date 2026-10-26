@@ -1,7 +1,7 @@
 {
   "auto": {
     "name": "twelfth-man-host",
-    "version": "1",
+    "version": "2",
     "display_name": "Twelfth Man",
     "tools": [
       "get_match_events",
@@ -13,7 +13,7 @@
   },
   "coach": {
     "name": "twelfth-man-coach",
-    "version": "1",
+    "version": "2",
     "display_name": "AI Coach",
     "tools": [
       "get_match_events",
@@ -25,7 +25,7 @@
   },
   "referee": {
     "name": "twelfth-man-rules",
-    "version": "1",
+    "version": "2",
     "display_name": "Rules Expert",
     "tools": [
       "get_match_events",
@@ -35,7 +35,7 @@
   },
   "data": {
     "name": "twelfth-man-data",
-    "version": "1",
+    "version": "2",
     "display_name": "Data Analyst",
     "tools": [
       "get_match_events",

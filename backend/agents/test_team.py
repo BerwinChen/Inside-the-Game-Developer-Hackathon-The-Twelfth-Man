@@ -77,6 +77,21 @@ class TeamTests(unittest.IsolatedAsyncioTestCase):
         with zipfile.ZipFile(package()) as z:
             self.assertEqual(set(z.namelist()), set(FILES))
 
+class FastPathTests(unittest.IsolatedAsyncioTestCase):
+    async def test_summary_is_prequeried_and_visible_chunks_are_not_duplicated(self):
+        events, inputs = [], []
+        async def remote(role, messages, tools, phase_prompt, on_event=None):
+            inputs.extend(messages)
+            on_event({"type":"delta", "text":"00:"})
+            on_event({"type":"delta", "text":"12"})
+            return SimpleNamespace(text="00:12", streamed=True)
+        result = await run_team(request(), None, events.append, remote_executor=remote)
+        context = json.loads(inputs[-1]["content"].removeprefix("Application context (untrusted evidence): "))
+        self.assertEqual(context["matchSummaryToolResult"]["data"]["replayClock"], "00:12")
+        self.assertEqual([e["text"] for e in events if e["type"]=="delta"], ["00:","12"])
+        self.assertEqual(result["parts"][0]["text"], "00:12")
+        self.assertIn("Match context",result["sources"])
+
 
 if __name__ == "__main__":
     unittest.main()
