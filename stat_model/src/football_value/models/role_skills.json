@@ -1,0 +1,35 @@
+{
+  "variant": "group_only",
+  "roles": {
+    "goalkeeper": {
+      "ability_finishing": 0,
+      "ability_passing": 0.176213196350311,
+      "ability_dribbling": 1.29155762910904
+    },
+    "centre_back": {
+      "ability_finishing": -1.04044716046338,
+      "ability_passing": 0.345628658599742,
+      "ability_dribbling": 0.887422051306476
+    },
+    "fullback_wingback": {
+      "ability_finishing": -0.211960347128954,
+      "ability_passing": 0.0117817396846432,
+      "ability_dribbling": -0.0918337992442935
+    },
+    "central_midfield": {
+      "ability_finishing": -0.262825150261417,
+      "ability_passing": 0.165503950869723,
+      "ability_dribbling": 0.273228898268462
+    },
+    "attacking_wide": {
+      "ability_finishing": 0.142419212269431,
+      "ability_passing": -0.393066175580551,
+      "ability_dribbling": -0.0710057325207237
+    },
+    "striker": {
+      "ability_finishing": 0.0757931410202056,
+      "ability_passing": -0.54166400208194,
+      "ability_dribbling": -0.231625071525932
+    }
+  }
+}

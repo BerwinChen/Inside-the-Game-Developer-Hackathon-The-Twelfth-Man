@@ -1,0 +1,37 @@
+{
+  "format_version": 1,
+  "max_horizon": 30,
+  "features": [
+    "goal_distance_m",
+    "goal_angle_rad",
+    "lateral_squared",
+    "is_pass",
+    "forward_progress_m",
+    "move_speed_mps",
+    "is_cross",
+    "recent_5s_count",
+    "recent_5s_forward_m",
+    "under_pressure",
+    "ability_finishing",
+    "ability_passing",
+    "ability_dribbling"
+  ],
+  "models": {
+    "goal": {
+      "file": "goal_model.json",
+      "sha256": "251b673029c1c386127ebbbd66e58ceee9821b25943b27458ad2dfb11c6dd545"
+    },
+    "shot": {
+      "file": "shot_model.json",
+      "sha256": "0b3937f837b1a5a948872fe316b8081b6de959488686aa843c0572c1c6224e0e"
+    }
+  },
+  "thresholds": {
+    "goal": 0.02147098028214189,
+    "shot": 0.2077789196561833
+  },
+  "role_skills": {
+    "file": "role_skills.json",
+    "sha256": "24c7f8675d2236e729bc699526c9f400875e223f5e43547d8386b0838643d210"
+  }
+}

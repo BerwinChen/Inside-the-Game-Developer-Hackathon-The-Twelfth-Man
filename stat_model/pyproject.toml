@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "football-goal-shot-predictor"
+version = "0.2.0"
+description = "Inference-only frozen 30-second football goal and shot forecasts"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+
+[project.scripts]
+football-forecast = "football_value.predict:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+football_value = ["models/*.json"]
