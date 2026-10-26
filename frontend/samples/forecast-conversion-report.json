@@ -1,0 +1,87 @@
+{
+  "synthetic": true,
+  "records": [
+    {
+      "role": "central_midfield",
+      "features": {
+        "goal_distance_m": 42.5,
+        "goal_angle_rad": 0.17181139880258817,
+        "lateral_squared": 0,
+        "is_pass": 1,
+        "forward_progress_m": 10,
+        "move_speed_mps": 5,
+        "is_cross": 0,
+        "recent_5s_count": 1,
+        "recent_5s_forward_m": 10,
+        "under_pressure": 0
+      }
+    },
+    {
+      "role": "central_midfield",
+      "features": {
+        "goal_distance_m": 32.88236609491476,
+        "goal_angle_rad": 0.21920344297852443,
+        "lateral_squared": 0.005406574394463662,
+        "is_pass": 0,
+        "forward_progress_m": 10,
+        "move_speed_mps": 3.726779962499649,
+        "is_cross": 0,
+        "recent_5s_count": 2,
+        "recent_5s_forward_m": 20,
+        "under_pressure": 1
+      }
+    },
+    {
+      "role": "striker",
+      "features": {
+        "goal_distance_m": 22.5,
+        "goal_angle_rad": 0.3225085582036031,
+        "lateral_squared": 0,
+        "is_pass": 1,
+        "forward_progress_m": 10,
+        "move_speed_mps": 3.726779962499649,
+        "is_cross": 0,
+        "recent_5s_count": 2,
+        "recent_5s_forward_m": 20,
+        "under_pressure": 0
+      }
+    }
+  ],
+  "mapping": [
+    {
+      "recordIndex": 0,
+      "inputIndex": 0,
+      "id": "example-pass",
+      "endTimeSeconds": 3,
+      "half": 1,
+      "team": "left",
+      "possessionId": "left-1",
+      "holderId": "left-7"
+    },
+    {
+      "recordIndex": 1,
+      "inputIndex": 1,
+      "id": "example-carry",
+      "endTimeSeconds": 6,
+      "half": 1,
+      "team": "left",
+      "possessionId": "left-1",
+      "holderId": "left-7"
+    },
+    {
+      "recordIndex": 2,
+      "inputIndex": 2,
+      "id": "example-next-pass",
+      "endTimeSeconds": 9,
+      "half": 1,
+      "team": "left",
+      "possessionId": "left-1",
+      "holderId": "left-9"
+    }
+  ],
+  "blocked": [],
+  "ignored": [],
+  "warnings": [
+    "Pressure, outcomes, receiver roles and possession labels require verified source data. GSR player coordinates are not automatically treated as ball/action endpoints."
+  ]
+}

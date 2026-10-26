@@ -1,0 +1,126 @@
+[
+  {
+    "type": "function",
+    "name": "get_match_summary",
+    "description": "Read the captured match identity, replay time, score, available data and model scope.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "list_players",
+    "description": "Resolve one or more player identities in the CURRENT replay. Does not search real-world football rosters.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Name, ID, shirt number or empty string to list the roster."
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "get_player_profiles",
+    "description": "Read profiles and historical statistics for one or multiple replay players. Respect the source and synthetic labels.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "player_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "description": "Player IDs, names or #numbers. Empty array means the selected player. Use list_players to resolve ambiguous names."
+        }
+      },
+      "required": [
+        "player_ids"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "get_player_match_stats",
+    "description": "Compare players using current-replay statistics, with explicit passing outcome coverage. Never infer unknown success rates.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "player_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "description": "Player IDs, names or #numbers. Empty array means the selected player. Use list_players to resolve ambiguous names."
+        },
+        "at_time": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Time in SECONDS, never minutes. Null means the captured replay time. Statistics are only available at that captured time."
+        }
+      },
+      "required": [
+        "player_ids",
+        "at_time"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "get_match_events",
+    "description": "Read available past replay events. Return times that the user can jump to; never return future events.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "start_time": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Replay time in seconds; null starts at zero."
+        },
+        "end_time": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Replay time in seconds; null ends at the captured time."
+        },
+        "player_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "description": "Empty array means all players for this tool."
+        }
+      },
+      "required": [
+        "start_time",
+        "end_time",
+        "player_ids"
+      ],
+      "additionalProperties": false
+    }
+  }
+]

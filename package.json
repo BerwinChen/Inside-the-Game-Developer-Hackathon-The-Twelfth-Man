@@ -1,0 +1,25 @@
+{
+  "name": "twelfth-man",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node frontend/build.mjs",
+    "dev": "npm run build && wrangler dev --config backend/wrangler.jsonc --ip 127.0.0.1 --port 8766",
+    "check": "node --check frontend/app.js && node --check frontend/chat-ui.js && node --check backend/chat-api.js && node --check backend/chat-tools.js && node --check backend/foundry-api.js && node --check backend/worker.js && tsc --noEmit -p backend/tsconfig.json && node --check backend/server.js && node --check backend/web-api.js",
+    "test": "node --test backend/tests/*.test.mjs",
+    "deploy:check": "npm run build && wrangler deploy --config backend/wrangler.jsonc --dry-run",
+    "deploy": "npm run build && wrangler deploy --config backend/wrangler.jsonc",
+    "types": "wrangler types --config backend/wrangler.jsonc",
+    "start": "node backend/server.js"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261023.1",
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.152.0"
+  },
+  "author": "berwin",
+  "engines": {
+    "node": ">=22"
+  }
+}

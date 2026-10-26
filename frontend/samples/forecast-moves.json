@@ -1,0 +1,12 @@
+{
+  "synthetic": true,
+  "coordinateSystem": "center_meters",
+  "completeMoveHistory": true,
+  "asOfSeconds": 10,
+  "roles": {"left-7": "central_midfield", "left-9": "striker"},
+  "moves": [
+    {"id":"example-pass", "half":1, "team":"left", "possessionId":"left-1", "label":"Pass", "completed":true, "playerId":"left-6", "receiverId":"left-7", "startTime":1, "endTime":3, "start":{"x":0,"y":0}, "end":{"x":10,"y":0}, "direction":1, "underPressure":false},
+    {"id":"example-carry", "half":1, "team":"left", "possessionId":"left-1", "label":"Carry", "completed":true, "playerId":"left-7", "startTime":3, "endTime":6, "start":{"x":10,"y":0}, "end":{"x":20,"y":5}, "direction":1, "underPressure":true},
+    {"id":"example-next-pass", "half":1, "team":"left", "possessionId":"left-1", "label":"Pass", "completed":true, "playerId":"left-7", "receiverId":"left-9", "startTime":6, "endTime":9, "start":{"x":20,"y":5}, "end":{"x":30,"y":0}, "direction":1, "underPressure":false}
+  ]
+}

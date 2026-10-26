@@ -1,0 +1,48 @@
+{
+  "auto": {
+    "name": "twelfth-man-host",
+    "version": "1",
+    "display_name": "Twelfth Man",
+    "tools": [
+      "get_match_events",
+      "get_match_summary",
+      "get_player_match_stats",
+      "get_player_profiles",
+      "list_players"
+    ]
+  },
+  "coach": {
+    "name": "twelfth-man-coach",
+    "version": "1",
+    "display_name": "AI Coach",
+    "tools": [
+      "get_match_events",
+      "get_match_summary",
+      "get_player_match_stats",
+      "get_player_profiles",
+      "list_players"
+    ]
+  },
+  "referee": {
+    "name": "twelfth-man-rules",
+    "version": "1",
+    "display_name": "Rules Expert",
+    "tools": [
+      "get_match_events",
+      "get_match_summary",
+      "list_players"
+    ]
+  },
+  "data": {
+    "name": "twelfth-man-data",
+    "version": "1",
+    "display_name": "Data Analyst",
+    "tools": [
+      "get_match_events",
+      "get_match_summary",
+      "get_player_match_stats",
+      "get_player_profiles",
+      "list_players"
+    ]
+  }
+}

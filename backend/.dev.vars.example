@@ -1,0 +1,8 @@
+# Copy to backend/.dev.vars and enter values locally. Never commit credentials.
+AZURE_TENANT_ID=
+AZURE_CLIENT_ID=
+AZURE_CLIENT_SECRET=
+# Optional shared chat access code:
+CHAT_ACCESS_TOKEN=
+# Optional legacy backend only:
+OPENAI_API_KEY=
